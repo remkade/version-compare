@@ -20,6 +20,12 @@ pub enum Part<'a> {
     ///
     /// These parts usually hold text with an yet unknown definition. Holds the string slice.
     Text(&'a str),
+
+    /// Indicators of a Pre Release or Post Release, dev or rc
+    PreRelease(&'a str),
+    PostRelease(&'a str),
+    DevRelease,(&'a str)
+    ReleaseCandidate(&'a str),
 }
 
 impl<'a> fmt::Display for Part<'a> {

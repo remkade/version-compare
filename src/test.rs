@@ -117,18 +117,31 @@ pub const COMBIS: &[VersionCombi] = &[
     VersionCombi("123", "123", Cmp::Eq, None),
     VersionCombi("123", "1.2.3", Cmp::Gt, None),
     VersionCombi("1.2.3", "123", Cmp::Lt, None),
+
+    // Prerelease versions
     VersionCombi("1.1.2", "1.1.30-dev", Cmp::Lt, None),
     VersionCombi("1.2.3", "1.2.3.alpha", Cmp::Gt, None),
     VersionCombi("1.2.3", "1.2.3-dev", Cmp::Gt, None),
+    VersionCombi("1.2.3", "1.2.3-pre0", Cmp::Gt, None),
+    VersionCombi("1.2.3", "1.2.3-preview1", Cmp::Gt, None),
+    VersionCombi("1.2.3", "1.2.3-preview-1", Cmp::Gt, None),
     VersionCombi("1.2.3 RC0", "1.2.3 rc1", Cmp::Lt, None),
     VersionCombi("1.2.3 rc2", "1.2.3 RC99", Cmp::Lt, None),
     VersionCombi("1.2.3 RC3", "1.2.3 RC1", Cmp::Gt, None),
     VersionCombi("1.2.3a", "1.2.3b", Cmp::Lt, None),
     VersionCombi("1.2.3b", "1.2.3a", Cmp::Gt, None),
+    VersionCombi("1.2.3b1", "1.2.3a1", Cmp::Gt, None),
     VersionCombi("1.2.3.dev", "1.2.3.alpha", Cmp::Gt, None),
     VersionCombi("1.2.3-dev", "1.2.3-alpha", Cmp::Gt, None),
     VersionCombi("1.2.3.dev.1", "1.2.3.alpha", Cmp::Gt, None),
     VersionCombi("1.2.3-dev-1", "1.2.3-alpha", Cmp::Gt, None),
+
+    // Post release versions
+    VersionCombi("1.2.3", "1.2.3-post", Cmp::Lt, None),
+    VersionCombi("1.2.3", "1.2.3-post1", Cmp::Lt, None),
+    VersionCombi("1.2.3", "1.2.3-post-1", Cmp::Lt, None),
+    
+    // Build Versions
     VersionCombi("version-compare 3.2.0 / build 0932", "3.2.5", Cmp::Lt, None),
     VersionCombi("version-compare 3.2.0 / build 0932", "3.1.1", Cmp::Gt, None),
     VersionCombi(
